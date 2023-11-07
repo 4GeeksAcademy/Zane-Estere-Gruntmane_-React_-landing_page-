@@ -1,19 +1,28 @@
 import React from "react";
 
-const Card = () => {
 
-    return (
-      <div className="card" style={{ width: "18rem" }}>
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
+const Card = ({ imageUrl, title, description, buttonText }) => {
+
+  const cardStyles = {
+    width: "18rem",
+    display: "inline-flex",
+    justifyContent: "space-around",
+    marginLeft: "1rem",
+
+  }
+  return (
+    <div className="card" style={cardStyles}>
+      <img src={imageUrl} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h className="card-title fs-4">{title}</h>
+        <p className="card-text fw-light">
+          {description}
+        </p>
       </div>
-    );
-  };
-  
-  export default Card;
+      <div className="card-footer"> "How to put button here?"</div>
+    </div>
+  );
+
+};
+
+export default Card;
